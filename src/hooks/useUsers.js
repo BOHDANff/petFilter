@@ -11,7 +11,7 @@ export const useUsers = (users, sortBy, query) => {
         else if(sortBy=='lastname'){
             return users.filter(user => user.lastname.toLowerCase().includes(query.toLowerCase()))}
         else if(sortBy=='age'){
-            return users.filter(user => user.age.toString().includes(query))}
+            return users.filter(user => user.age.toString()==query)}
         else if(sortBy=='sex'){
             return users.filter(user => user.sex.includes(query))}
     }, [query])

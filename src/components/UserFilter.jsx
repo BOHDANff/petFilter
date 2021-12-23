@@ -30,11 +30,10 @@ const UserFilter = ({filter, sortBy, setFilter, isCheckm, setIsCheckm, setIsChec
                 <MyInput
                     onBlur={e => {
                         e.target.value=''
-                        setFilter({...filter, query: ''})}
+                        setFilter({...filter, query: '', sort:''})}
                     }
-                    onChange={e => {if(e.target.value.length>=2){
-                        sortBy('age',e)
-                    console.log(filter)}}}
+                    onChange={e => {sortBy('age',e)
+                    console.log(filter)}}
                     placeholder="Поиск..."
                 />
             </div>
