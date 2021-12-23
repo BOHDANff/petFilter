@@ -32,8 +32,9 @@ const UserFilter = ({filter, sortBy, setFilter, isCheckm, setIsCheckm, setIsChec
                         e.target.value=''
                         setFilter({...filter, query: ''})}
                     }
-                    onChange={e => {sortBy('age',e)
-                    console.log(filter)}}
+                    onChange={e => {if(e.target.value.length>=2){
+                        sortBy('age',e)
+                    console.log(filter)}}}
                     placeholder="Поиск..."
                 />
             </div>
