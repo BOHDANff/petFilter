@@ -15,7 +15,7 @@ function App() {
     const [totalPages, setTotalPages] = useState(0);
     const [limit, setLimit] = useState(5);
     const [page, setPage] = useState(1);
-    const sortedAndSearchedUsers = useUsers(users, filter.sort, filter.query);
+    const sortedUsers = useUsers(users, filter.sort, filter.query);
     const [isCheckm, setIsCheckm] = useState(false);
     const [isCheckf, setIsCheckf] = useState(false);
     const lastElement = useRef()
@@ -56,7 +56,7 @@ function App() {
             {userError &&
             <h1>Произошла ошибка ${userError}</h1>
             }
-            <UserList title="Users" posts={sortedAndSearchedUsers}/>
+            <UserList title="Users" users={sortedUsers} f={filter}/>
             <div ref={lastElement}/>
             {isUsersLoading &&
             <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader/></div>

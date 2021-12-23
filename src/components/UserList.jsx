@@ -2,9 +2,9 @@ import React from 'react';
 import UserItem from "./UserItem";
 import {TransitionGroup, CSSTransition} from "react-transition-group";
 
-const UserList = ({posts, title}) => {
+const UserList = ({users, title}) => {
 
-    if (!posts.length) {
+    if (!users.length) {
         return (
             <h1 style={{textAlign: 'center'}}>
                 Users not found!
@@ -18,7 +18,7 @@ const UserList = ({posts, title}) => {
                 {title}
             </h1>
 
-            {posts.map((post, index) =>
+            {users.map((post, index) =>
 
                 <UserItem classNames="post" key={index} number={index + 1} post={post}/>
             )}

@@ -30,7 +30,7 @@ const UserFilter = ({filter, sortBy, setFilter, isCheckm, setIsCheckm, setIsChec
                 <MyInput
                     onBlur={e => {
                         e.target.value=''
-                        setFilter({...filter, query: '', sort:''})}
+                        setFilter({...filter, query: ''})}
                     }
                     onChange={e => {sortBy('age',e)
                     console.log(filter)}}
